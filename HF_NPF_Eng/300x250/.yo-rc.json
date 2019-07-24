@@ -1,0 +1,13 @@
+{
+  "generator-banner": {
+    "nameSpace": "HF",
+    "publisher": "doubleclick",
+    "bannerName": "HF_Care_Eng_300x250",
+    "width": "300",
+    "height": "250",
+    "size": "150",
+    "includeFallbackIE": true,
+    "fallbackIEVersion": 10,
+    "doubleclickPlatform": "campaignManager"
+  }
+}
