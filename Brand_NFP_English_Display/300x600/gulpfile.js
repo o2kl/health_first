@@ -185,7 +185,7 @@ gulp.task( 'imageCompress', [ 'copy', 'sass' ], function (done) {
 
 gulp.task( 'compress', [ 'clean', 'copy','sass', 'inline', 'replace', 'htmlmin', 'imageCompress' ], function() {
 	return gulp.src(  dist + '/*' )
-			   .pipe( zip( 'HF_NFP_Eng_300x600.zip' ) )
+			   .pipe( zip( 'Brand_NFP_English_Display 300x600.zip' ) )
 			   .pipe( gulp.dest( './' ) );
 });
 
