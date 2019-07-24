@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+/node_modules
+/Assets
+Assets
+.psd
+.ai
+.indd
