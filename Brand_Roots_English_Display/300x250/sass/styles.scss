@@ -1,0 +1,87 @@
+@import 'compass/reset';
+@import 'compass/css3';
+@import 'compass/css3/transform';
+@import 'compass/utilities/sprites';
+
+// set up variables
+$width: 300px;
+$height: 250px;
+
+// Uncomment to include sprites in your banner
+$sprites: sprite-map('sprites/*.png');
+
+// to use sprites, place the image in the sprites folder and set the background for the desired element as follows:
+// .element { background: sprite($sprites, image-name); }
+
+// set all elements to be box-sizing: border box to include any border, padding and content, but not margin.
+*,
+:before,
+:after {
+  @include box-sizing(border-box);
+}
+
+// 100% width and height elements that can be positioned easily absolutely
+.abs-pos {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: $width;
+  height: $height;
+  overflow: hidden;
+}
+
+#bg {
+  @extend .abs-pos;
+  background: #569035;
+}
+
+#wrapper {
+  @extend .abs-pos;
+  position: relative;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+}
+
+#click_through {
+  @extend .abs-pos;
+  z-index: 999;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #000000;
+}
+
+#leaf {
+  @extend .abs-pos;
+  background: sprite($sprites, leaf);
+}
+
+#logo {
+  @extend .abs-pos;
+  background: sprite($sprites, logo);
+}
+
+#copy-1 {
+  @extend .abs-pos;
+  background: sprite($sprites, copy-1);
+}
+#copy-2 {
+  @extend .abs-pos;
+  background: sprite($sprites, copy-2);
+}
+
+#lockup {
+  @extend .abs-pos;
+  background: sprite($sprites, lockup);
+}
+
+#drawer {
+  @extend .abs-pos;
+}
+
+#drawer-bg {
+  @extend .abs-pos;
+  top: 88px;
+}
