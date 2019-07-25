@@ -43,8 +43,7 @@ var nameSpace = HF || {};
     });
     TweenMax.set(['#copy-1'], { y: 130, autoAlpha: 0 });
     TweenMax.set(['#copy-2'], { y: 50, autoAlpha: 0 });
-    TweenMax.set(['#lockup'], { y: 100, autoAlpha: 1 });
-    TweenMax.set(['#drawer'], { y: 110, autoAlpha: 1 });
+    TweenMax.set(['#drawer', '#lockup'], { y: 100, autoAlpha: 1 });
     TweenMax.set(['#leaf', '#logo'], { y: 0, autoAlpha: 1 });
     TweenMax.set('#drawer-bg', { y: 0, autoAlpha: 1 });
 
@@ -190,13 +189,13 @@ var nameSpace = HF || {};
           rotationZ: 0.01,
           ease: Power1.easeInOut
         },
-        '-=0.3'
+        '-=0.3',
       )
       .to(
-        ['#drawer'],
+        [ '#drawer'],
         1.25,
         {
-          y: 10,
+          y: 15,
           autoAlpha: 1,
           transformPerspective: 400,
           force3D: true,
