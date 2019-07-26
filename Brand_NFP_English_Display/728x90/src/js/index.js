@@ -150,7 +150,7 @@ var nameSpace = HF || {};
           rotationZ: 0.01,
           ease: Power1.easeInOut
         },
-        '-= 1.75'
+        '-= 0'
       )
       .to(
         '#copy-1',
