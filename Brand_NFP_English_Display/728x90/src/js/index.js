@@ -119,13 +119,25 @@ var nameSpace = HF || {};
     // TweenMax.set(logo, {x:100, y:50, opacity:0});
 
     timeline = new TimelineMax({
-      delay: 0.2,
+      delay: 1.5,
       onComplete: nameSpace.onAnimationComplete
     });
 
     timeline.pause();
 
     timeline
+      .to(
+        ['#logo'],
+        0.3,
+        {
+          autoAlpha: 0,
+          transformPerspective: 400,
+          force3D: true,
+          rotationZ: 0.01,
+          ease: Power1.easeInOut
+        },
+        '+= 0'
+      )
       .to(
         '#leaf',
         1,
@@ -139,18 +151,6 @@ var nameSpace = HF || {};
           ease: Power1.easeOut
         },
         '+=0.75'
-      )
-      .to(
-        ['#logo'],
-        0.3,
-        {
-          autoAlpha: 0,
-          transformPerspective: 400,
-          force3D: true,
-          rotationZ: 0.01,
-          ease: Power1.easeInOut
-        },
-        '-= 0'
       )
       .to(
         '#copy-1',
