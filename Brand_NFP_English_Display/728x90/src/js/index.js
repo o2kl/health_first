@@ -43,8 +43,9 @@ var nameSpace = HF || {};
     });
     TweenMax.set(['#copy-1'], { x: 728, y:0,  autoAlpha: 0 });
     TweenMax.set(['#copy-2'], { x: 728, y: 0, autoAlpha: 0 });
-    TweenMax.set(['#drawer', '#lockup'], { x: 200, autoAlpha: 1 });
-    TweenMax.set(['#leaf', '#logo'], { y: 0, autoAlpha: 1 });
+    TweenMax.set(['#drawer', '#lockup'], { x: 250, autoAlpha: 1 });
+    TweenMax.set(['#logo'], { y: 0, autoAlpha: 1 });
+    TweenMax.set(['#leaf'], { x: -250,  y: 0, scale: 0.6, autoAlpha: 0 });
     TweenMax.set('#drawer-bg', { y: 0, autoAlpha: 1 });
 
     wrapper = nameSpace.$('#wrapper');
