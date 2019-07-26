@@ -41,11 +41,11 @@ var nameSpace = HF || {};
     ids.forEach(function(element) {
       //   TweenMax.to(element, 0, { autoAlpha: 0, y: height - 100 });
     });
-    TweenMax.set(['#copy-1'], { x: 728, y:0,  autoAlpha: 0 });
+    TweenMax.set(['#copy-1'], { x: 780, y:0,  autoAlpha: 0 });
     TweenMax.set(['#copy-2'], { x: 728, y: 0, autoAlpha: 0 });
     TweenMax.set(['#drawer', '#lockup'], { x: 250, autoAlpha: 1 });
     TweenMax.set(['#logo'], { y: 0, autoAlpha: 1 });
-    TweenMax.set(['#leaf'], { x: -250,  y: 0, scale: 0.6, autoAlpha: 0 });
+    TweenMax.set(['#leaf'], { x: 478,  y: 0, scale: 0.6, autoAlpha: 1 });
     TweenMax.set('#drawer-bg', { y: 0, autoAlpha: 1 });
 
     wrapper = nameSpace.$('#wrapper');
@@ -141,7 +141,7 @@ var nameSpace = HF || {};
       )
       .to(
         '#leaf',
-        1,
+        1.3,
         {
           x: -250,
           autoAlpha: 1,
@@ -151,7 +151,7 @@ var nameSpace = HF || {};
           rotationZ: 0.01,
           ease: Power1.easeOut
         },
-        '+=0.75'
+        '-= 0.3'
       )
       .to(
         '#copy-1',
