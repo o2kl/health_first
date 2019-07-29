@@ -32,7 +32,8 @@ $sprites: sprite-map('sprites/*.png');
 
 #bg {
   @extend .abs-pos;
-  background: #569035;
+  background: #5E2584;
+   // background-image: url("/img/static.jpg");
 }
 
 #wrapper {
@@ -83,5 +84,5 @@ $sprites: sprite-map('sprites/*.png');
 
 #drawer-bg {
   @extend .abs-pos;
-  top: 180px;
+  top: 220px;
 }
