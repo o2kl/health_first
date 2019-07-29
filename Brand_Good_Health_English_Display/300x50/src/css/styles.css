@@ -62,8 +62,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background-size: contain; }
 
 #bg {
-  background: #569035;
-  background-image: url("/img/static.jpg"); }
+  background: #5E2584; }
 
 #wrapper {
   position: relative;
@@ -93,4 +92,5 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background: url('../img/sprites-sc69aa0c0a6.png') 0 -150px; }
 
 #drawer-bg {
+  overflow: visible;
   left: -5px; }
