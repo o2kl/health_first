@@ -143,7 +143,7 @@ var nameSpace = HF || {};
         '#leaf',
         1.3,
         {
-          x: -136,
+          x: -125,
           autoAlpha: 1,
           scale: 0.5,
           transformPerspective: 400,
