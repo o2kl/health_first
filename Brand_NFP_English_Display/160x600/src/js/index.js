@@ -36,12 +36,12 @@ var nameSpace = HF || {};
       }
     }
 
-    width = 300;
+    width = 160;
     height = 600;
     ids.forEach(function(element) {
       //   TweenMax.to(element, 0, { autoAlpha: 0, y: height - 100 });
     });
-    TweenMax.set(['#copy-1'], { y: 300, autoAlpha: 0 });
+    TweenMax.set(['#copy-1'], { y: 160, autoAlpha: 0 });
     TweenMax.set(['#copy-2'], { y: 100, autoAlpha: 0 });
     TweenMax.set(['#drawer', '#lockup'], { y: 270, autoAlpha: 1 });
     TweenMax.set(['#leaf', '#logo'], { y: 0, autoAlpha: 1 });
@@ -151,7 +151,7 @@ var nameSpace = HF || {};
           rotationZ: 0.01,
           ease: Power1.easeOut
         },
-        '-=0.75'
+        '-=.75'
       )
       .to(
         '#copy-2',
