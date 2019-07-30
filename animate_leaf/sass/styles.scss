@@ -47,7 +47,7 @@ $height: 600px;
 }
 
 
-.leaf{
+.leaf-svg{
 	@include transform-origin(50%, 50%);
 	width: $width;
 	height: $height;
