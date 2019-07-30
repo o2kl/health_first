@@ -1,0 +1,92 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/css3/transform";
+@import "compass/utilities/sprites";
+
+// set up variables
+$width: 300px;
+$height: 600px;
+
+// Uncomment to include sprites in your banner
+// $sprites: sprite-map("sprites/*.png");
+
+// to use sprites, place the image in the sprites folder and set the background for the desired element as follows:
+// .element { background: sprite($sprites, image-name); }
+
+// set all elements to be box-sizing: border box to include any border, padding and content, but not margin.
+*, :before, :after {
+	@include box-sizing(border-box);
+}
+
+// 100% width and height elements that can be positioned easily absolutely
+.abs-pos {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: $width;
+	height: $height; 
+	overflow: hidden;
+}
+ #code, #copy-1,  #copy-2, #copy-2b, #copy-3, #anim-wrapper, #anim-wrapper-rel, .bird{
+	@extend .abs-pos;
+}
+#logo {
+	@extend .abs-pos;
+	top:-5px;
+	left:60px;
+}
+
+#icon {
+	@extend .abs-pos;
+	
+}
+
+#cta {
+	@extend .abs-pos;
+	left:30px;
+}
+
+
+.leaf{
+	@include transform-origin(50%, 50%);
+	width: $width;
+	height: $height;
+
+}
+#anim-wrapper-rel{
+	position: relative;
+	
+	@include transform-origin(60%, 60%);
+	visibility: hidden;
+}
+#anim-wrapper-scale{
+	position: relative;
+	@include transform-origin(60%, 60%);
+
+}
+#wrapper {
+	@extend .abs-pos;
+	position: relative;	
+	visibility: hidden; 
+
+	&.show {
+		visibility: visible;
+	}
+}
+#bg {
+	@extend .abs-pos;
+	//background-color:#ffffff;
+	background-color: #5E2584;
+
+	//background-image: url(../img/guide.jpg)
+}
+#click_through {
+	@extend .abs-pos;
+	z-index: 999;
+	cursor: pointer;
+	background-color: rgba(255,255,255,0);
+	border: 1px solid #000000;
+}
+
+
+
