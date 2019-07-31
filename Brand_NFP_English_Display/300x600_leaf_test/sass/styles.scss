@@ -53,10 +53,12 @@ $sprites: sprite-map('sprites/*.png');
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid #000000;
 }
+
+
 #leaf-svg{
-  @include transform-origin(50%, 50%);
-  width: $width;
-  height: $height;
+  @include transform-origin(60%, 60%);
+  width: 125px;
+  height: 170px;
 
 }
 #anim-wrapper-rel{
@@ -70,6 +72,8 @@ $sprites: sprite-map('sprites/*.png');
   @include transform-origin(60%, 60%);
 
 }
+
+
 
 #leaf {
   @extend .abs-pos;

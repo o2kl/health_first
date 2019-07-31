@@ -76,12 +76,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 1px solid #000000; }
 
 #leaf-svg {
-  -moz-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  width: 300px;
-  height: 600px; }
+  -moz-transform-origin: 60% 60%;
+  -ms-transform-origin: 60% 60%;
+  -webkit-transform-origin: 60% 60%;
+  transform-origin: 60% 60%;
+  width: 125px;
+  height: 170px; }
 
 #anim-wrapper-rel {
   position: relative;

@@ -119,7 +119,7 @@ var nameSpace = HF || {};
     // It will even take care of browser prefixes
     // TweenMax.set(logo, {x:100, y:50, opacity:0});
     TweenMax.set("#anim-wrapper-rel",  {autoAlpha: 1});
-    TweenMax.set("#anim-wrapper", {autoAlpha: 1, y: -42, x: -6});
+    TweenMax.set("#anim-wrapper", {autoAlpha: 1});
 
     timeline = new TimelineMax({
       delay: 3.7,
@@ -199,18 +199,18 @@ var nameSpace = HF || {};
       TweenMax.to('#leaf-right', 2.8, {morphSVG:{shape: leaf.openRight}, ease:Strong.easeInOut, delay: 0});
       TweenMax.to('#leaf-left', 2.8, {morphSVG:{shape: leaf.openLeft}, ease:Strong.easeInOut, delay: 0});
       console.log(leaf.openLeft)
-      TweenMax.to("#leaf", 0.2, {
+      TweenMax.to(["#leaf", "#raster-leaf"], 2, {
                   autoAlpha: 1, 
-                  delay: 3.5
+                  delay: 2.3
                 });
-      TweenMax.set(['#anim-wrapper', '#anim-wrapper-rel', '#anim-wrapper-scale'], {autoAlpha:0, x: -800, delay: 3.7})
+      //TweenMax.set(['#anim-wrapper', '#anim-wrapper-rel', '#anim-wrapper-scale'], {autoAlpha:0, x: -800, delay: 3.7})
 
       //TweenMax.delayedCall(4.7, timeline.play);
-      timeline.play();
+      //timeline.play();
 
 
       console.log("inAnimInit");
-      TweenMax.set("#anim-wrapper-scale", {scale: 0.75, y: -42, x: -6});
+      TweenMax.set("#anim-wrapper-scale", {y: 197, x:60}); //x: 89});
       TweenMax.set("#anim-wrapper-rel", {scaleY:0.01, scaleX: 0.03});
       TweenMax.set("#leaf", {autoAlpha: 0});
     // timeline.add([
