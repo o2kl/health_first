@@ -88,19 +88,26 @@ $sprites: sprite-map('sprites/*.png');
   position: relative;
   
   visibility: hidden;
+  width: 70px;
+  height: 126px;
 }
 #anim-wrapper-scale{
   position: relative;
   //@include transform-origin(60%, 60%);
 
 }
-
-
-
-#leaf {
+#raster-leaf {
   @extend .abs-pos;
-  background: sprite($sprites, leaf);
+  background: sprite($sprites, raster-leaf);
+  left: 30px;
+  top: 25px;
+  width: 66px;
+  height: 98px;
+  //background-color: red;
 }
+
+
+
 
 #logo {
   @extend .abs-pos;

@@ -45,7 +45,7 @@ var nameSpace = HF || {};
     TweenMax.set(['#copy-1'], { y: 300, autoAlpha: 0 });
     TweenMax.set(['#copy-2'], { y: 100, autoAlpha: 0 });
     TweenMax.set(['#drawer', '#lockup'], { y: 270, autoAlpha: 1 });
-    TweenMax.set(['#leaf', '#logo'], { y: 0, autoAlpha: 1 });
+    TweenMax.set(['#raster-leaf', '#logo'], { y: 0, autoAlpha: 1 });
     TweenMax.set('#drawer-bg', { y: 0, autoAlpha: 1 });
 
     wrapper = nameSpace.$('#wrapper');
@@ -120,15 +120,21 @@ var nameSpace = HF || {};
     // TweenMax.set(logo, {x:100, y:50, opacity:0});
 
     timeline = new TimelineMax({
-      delay: 3.7,
+      delay: 1.5,
       onComplete: nameSpace.onAnimationComplete
     });
 
     timeline.pause();
 
+    ///  leaf animation position vars 
+    var leafScale, leafX, leafY, endScale, endX, endY;
+    leafScale = 1;
+    leafX = 89;
+    leafY = 197;
+
     timeline
       .to(
-        ['#leaf', '#anim-wrapper'],
+        '#anim-wrapper',
         1,
         {
           y: -225,
@@ -193,31 +199,34 @@ var nameSpace = HF || {};
         '-=0.3'
       );
 
+      
 
       TweenMax.set("#anim-wrapper-rel",  {autoAlpha: 1});
       TweenMax.set("#anim-wrapper", {autoAlpha: 1});
-      TweenMax.set("#shadow-svg-div", {autoAlpha: 0.2});
+      TweenMax.set("#shadow-svg-div", {autoAlpha: 0.4});
       TweenMax.set(['#shadow-svg-div', '#leaf-mover'], {transformOrigin: "75px 143px"});
+      //TweenMax.set('#raster-leaf', {transformOrigin: "75px 143px"});
+      TweenMax.set("#anim-wrapper-scale", {scale: leafScale, x: leafX, y: leafY});
+      TweenMax.set("#raster-leaf", {autoAlpha: 0});
 
-      TweenMax.from("#leaf-mover", 4, { scaleY: 0.001, scaleX: 0.003, x: 20, y: 100, rotaion: 90, ease:Expo.easeOut, delay: 0});
-      TweenMax.from("#shadow-svg-div", 3, { scaleY: 0.5, scaleX: 0.1, x: 15, opacity: 0.01, ease:Linear.easeOut, delay: 0});
-      TweenMax.to('#leaf-right', 2.8, {morphSVG:{shape: leaf.openRight}, ease:Strong.easeInOut, delay: 0});
-      TweenMax.to('#leaf-left', 2.8, {morphSVG:{shape: leaf.openLeft}, ease:Strong.easeInOut, delay: 0});
+      TweenMax.from("#leaf-mover", 3.2, {  scaleY: 0.0001, x: 20, y: 200, rotation: 80, ease:Expo.easeOut, delay: 0});
+      TweenMax.from("#shadow-svg-div", 2.2, { scaleY: 0.1, scaleX: 0.01, x: 15, opacity: 0.01, ease:Linear.easeOut, delay: 0});
+      TweenMax.to('#leaf-right', 1.5, {morphSVG:{shape: leaf.openRight}, ease:Strong.easeInOut, delay: .5});
+      TweenMax.to('#leaf-left', 1.5, {morphSVG:{shape: leaf.openLeft}, ease:Strong.easeInOut, delay: .5});
       
-      TweenMax.to(["#leaf", "#raster-leaf"], 2, {
+      TweenMax.to(["#raster-leaf"], 2, {
                   autoAlpha: 1, 
-                  delay: 2.3
+                  delay: 1.9
                 });
       //TweenMax.set(['#anim-wrapper', '#anim-wrapper-rel', '#anim-wrapper-scale'], {autoAlpha:0, x: -800, delay: 3.7})
 
       //TweenMax.delayedCall(4.7, timeline.play);
       timeline.play();
 
+      
 
       console.log("inAnimInit");
-      TweenMax.set("#anim-wrapper-scale", {y: 197, x: 89});
       
-      TweenMax.set("#leaf", {autoAlpha: 0});
     // timeline.add([
     //   TweenMax.to(logo, 0.6, { opacity: 1 }),
     //   TweenMax.to(copy, 0.8, { css: { opacity: 1 }, delay: 0.4 })
