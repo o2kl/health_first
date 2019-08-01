@@ -118,8 +118,6 @@ var nameSpace = HF || {};
     // TweenMax can be used to set css
     // It will even take care of browser prefixes
     // TweenMax.set(logo, {x:100, y:50, opacity:0});
-    TweenMax.set("#anim-wrapper-rel",  {autoAlpha: 1});
-    TweenMax.set("#anim-wrapper", {autoAlpha: 1});
 
     timeline = new TimelineMax({
       delay: 3.7,
@@ -130,7 +128,7 @@ var nameSpace = HF || {};
 
     timeline
       .to(
-        '#leaf',
+        ['#leaf', '#anim-wrapper'],
         1,
         {
           y: -225,
@@ -195,10 +193,17 @@ var nameSpace = HF || {};
         '-=0.3'
       );
 
-      TweenMax.to("#anim-wrapper-rel", 4, { scaleY: 1, scaleX: 1, ease:Expo.easeOut, delay: 0});
+
+      TweenMax.set("#anim-wrapper-rel",  {autoAlpha: 1});
+      TweenMax.set("#anim-wrapper", {autoAlpha: 1});
+      TweenMax.set("#shadow-svg-div", {autoAlpha: 0.2});
+      TweenMax.set(['#shadow-svg-div', '#leaf-mover'], {transformOrigin: "75px 143px"});
+
+      TweenMax.from("#leaf-mover", 4, { scaleY: 0.001, scaleX: 0.003, x: 20, y: 100, rotaion: 90, ease:Expo.easeOut, delay: 0});
+      TweenMax.from("#shadow-svg-div", 3, { scaleY: 0.5, scaleX: 0.1, x: 15, opacity: 0.01, ease:Linear.easeOut, delay: 0});
       TweenMax.to('#leaf-right', 2.8, {morphSVG:{shape: leaf.openRight}, ease:Strong.easeInOut, delay: 0});
       TweenMax.to('#leaf-left', 2.8, {morphSVG:{shape: leaf.openLeft}, ease:Strong.easeInOut, delay: 0});
-      console.log(leaf.openLeft)
+      
       TweenMax.to(["#leaf", "#raster-leaf"], 2, {
                   autoAlpha: 1, 
                   delay: 2.3
@@ -206,12 +211,12 @@ var nameSpace = HF || {};
       //TweenMax.set(['#anim-wrapper', '#anim-wrapper-rel', '#anim-wrapper-scale'], {autoAlpha:0, x: -800, delay: 3.7})
 
       //TweenMax.delayedCall(4.7, timeline.play);
-      //timeline.play();
+      timeline.play();
 
 
       console.log("inAnimInit");
-      TweenMax.set("#anim-wrapper-scale", {y: 197, x:60}); //x: 89});
-      TweenMax.set("#anim-wrapper-rel", {scaleY:0.01, scaleX: 0.03});
+      TweenMax.set("#anim-wrapper-scale", {y: 197, x: 89});
+      
       TweenMax.set("#leaf", {autoAlpha: 0});
     // timeline.add([
     //   TweenMax.to(logo, 0.6, { opacity: 1 }),

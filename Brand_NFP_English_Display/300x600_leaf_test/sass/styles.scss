@@ -55,21 +55,43 @@ $sprites: sprite-map('sprites/*.png');
 }
 
 
-#leaf-svg{
-  @include transform-origin(60%, 60%);
+#leaf-svg-div{
+  @extend .abs-pos;
   width: 125px;
   height: 170px;
 
 }
+#leaf-masker{
+  @extend .abs-pos;
+  width: 125px;
+  height: 143px;
+
+}
+#leaf-mover{
+  @extend .abs-pos;
+  width: 125px;
+  height: 170px;
+
+}
+#shadow-svg-div{
+  @extend .abs-pos;
+  width: 125px;
+  height: 170px;
+
+}
+#anim-wrapper{
+  @extend .abs-pos;
+  width: $width;
+  height: $height;
+}
 #anim-wrapper-rel{
   position: relative;
   
-  @include transform-origin(60%, 60%);
   visibility: hidden;
 }
 #anim-wrapper-scale{
   position: relative;
-  @include transform-origin(60%, 60%);
+  //@include transform-origin(60%, 60%);
 
 }
 
