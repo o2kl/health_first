@@ -4,7 +4,7 @@
 @import 'compass/utilities/sprites';
 
 // set up variables
-$width: 300px;
+$width: 160px;
 $height: 600px;
 
 // Uncomment to include sprites in your banner
@@ -32,8 +32,7 @@ $sprites: sprite-map('sprites/*.png');
 
 #bg {
   @extend .abs-pos;
-   background: #569035;
-  
+  background: #569035;
 }
 
 #wrapper {
@@ -53,67 +52,11 @@ $sprites: sprite-map('sprites/*.png');
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid #000000;
 }
-#click_through_legal {
+
+#leaf {
   @extend .abs-pos;
-  z-index: 1000;
-  cursor: pointer;
-  background-color: rgba(255, 0, 0, 0.1);
+  background: sprite($sprites, leaf);
 }
-
-/* animations stuff start */
-#leaf-svg-div{
-  @extend .abs-pos;
-  width: 125px;
-  height: 170px;
-
-}
-#leaf-masker{
-  @extend .abs-pos;
-  width: 125px;
-  height: 143px;
-
-}
-#leaf-mover{
-  @extend .abs-pos;
-  width: 125px;
-  height: 170px;
-
-}
-#shadow-svg-div{
-  @extend .abs-pos;
-  width: 125px;
-  height: 170px;
-
-}
-#anim-wrapper{
-  @extend .abs-pos;
-  width: $width;
-  height: $height;
-}
-#anim-wrapper-rel{
-  position: relative;
-  
-  visibility: hidden;
-  width: 70px;
-  height: 126px;
-}
-#anim-wrapper-scale{
-  position: relative;
-
-}
-#raster-leaf {
-  @extend .abs-pos;
-  background: sprite($sprites, raster-leaf);
-  left: 30px;
-  top: 25px;
-  width: 66px;
-  height: 98px;
-}
-
-/*   animation stuff end */
-
-
-
 
 #logo {
   @extend .abs-pos;
