@@ -42,7 +42,7 @@ var nameSpace = HF || {};
     ids.forEach(function(element) {
       //   TweenMax.to(element, 0, { autoAlpha: 0, y: height - 100 });
     });
-    TweenMax.set(['#copy-1'], { x: 780, y:0,  autoAlpha: 0 });
+    TweenMax.set(['#copy-1', '#copy-3'], { x: width, y:0,  autoAlpha: 0 });
     TweenMax.set(['#copy-2'], { x: 320, y: 0, autoAlpha: 0 });
     TweenMax.set(['#drawer', '#lockup'], { x: 250, autoAlpha: 1 });
     TweenMax.set(['#logo'], { y: 0, autoAlpha: 1 });
@@ -120,7 +120,7 @@ var nameSpace = HF || {};
     // It will even take care of browser prefixes
     // TweenMax.set(logo, {x:100, y:50, opacity:0});
 
-    var leafScale, leafX, leafY, endScale, endX, endY, endDrawer, timelineDelay;
+    var leafScale, leafX, leafY, endScale, endX, endY, endDrawer, endLeaf, timelineDelay;
     leafScale = .35;
     leafX = 35;
     leafY = -45;
@@ -128,6 +128,7 @@ var nameSpace = HF || {};
     endX = -96;
     endY = -42;
     endDrawer = 0;
+    endLeaf = -119
     timelineDelay= 3;
 
 
@@ -184,7 +185,7 @@ var nameSpace = HF || {};
         '+=1'
       )
       .to(
-        '#lockup',
+        ['#lockup', '#copy-3'],
         1.25,
         {
           x: 0,
@@ -224,7 +225,7 @@ var nameSpace = HF || {};
           '#anim-wrapper-scale',
           1.25,
           {
-            x: -127,
+            x: endLeaf,
             force3D: true,
             rotationZ: 0.01,
             ease: Power1.easeInOut

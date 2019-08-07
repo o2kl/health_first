@@ -46,7 +46,7 @@ var nameSpace = HF || {};
     TweenMax.set(['#copy-2'], { y: 50, autoAlpha: 0 });
     TweenMax.set(['#drawer', '#lockup'], { y: 100, autoAlpha: 1 });
     TweenMax.set(['#leaf', '#logo'], { y: 0, autoAlpha: 1 });
-    TweenMax.set('#drawer-bg', { y: 0, autoAlpha: 1 });
+    
 
     wrapper = nameSpace.$('#wrapper');
     clickThrough = document.getElementById('click_through');
@@ -119,7 +119,7 @@ var nameSpace = HF || {};
     // It will even take care of browser prefixes
     // TweenMax.set(logo, {x:100, y:50, opacity:0});
 
-    var leafScale, leafX, leafY, endScale, endX, endY, endDrawer, timelineDelay;
+    var leafScale, leafX, leafY, endScale, endX, endY, endDrawer, endLeaf, timelineDelay;
     leafScale = .6;
     leafX = 46;
     leafY = 37;

@@ -121,6 +121,23 @@ $sprites: sprite-map('sprites/*.png');
   background: sprite($sprites, copy-2);
 }
 
+/* begin brushstrokes */
+#xout {
+  @extend .abs-pos;
+}
+#xout-relative {
+  @extend .abs-pos;
+  position: relative;
+}
+#brushstroke {
+  position: absolute;
+  background: sprite($sprites, brushstroke);
+  @include transform-origin(50% 50%);
+  width: 63px;
+  height: 12px;
+}
+/* end brushstrokes */
+
 #lockup {
   @extend .abs-pos;
   background: sprite($sprites, lockup);

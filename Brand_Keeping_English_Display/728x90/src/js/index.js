@@ -120,13 +120,13 @@ var nameSpace = HF || {};
     // It will even take care of browser prefixes
     // TweenMax.set(logo, {x:100, y:50, opacity:0});
 
-    var leafScale, leafX, leafY, endScale, endX, endY, endDrawer, timelineDelay;
+    var leafScale, leafX, leafY, endScale, endX, endY, endDrawer, endLeaf, timelineDelay;
     leafScale = .65;
     leafX = 196;
     leafY = -31;
-    endScale = 0.36;
-    endX = -166;
-    endY = -26;
+    endScale = 0.47;
+    endX = -140;
+    endY = -29;
     endDrawer = 0;
     timelineDelay= 3;
 
@@ -224,7 +224,7 @@ var nameSpace = HF || {};
           '#anim-wrapper-scale',
           1.25,
           {
-            x: -194,
+            x: -160,
             force3D: true,
             rotationZ: 0.01,
             ease: Power1.easeInOut

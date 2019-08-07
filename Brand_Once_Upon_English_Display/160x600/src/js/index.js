@@ -125,7 +125,7 @@ var nameSpace = HF || {};
     endScale = 0.38;
     endX = 6;
     endY = -11;
-    endDrawer = 0;
+    endDrawer = 60;
     timelineDelay= 1.5;
     leaf = leafPath;
 

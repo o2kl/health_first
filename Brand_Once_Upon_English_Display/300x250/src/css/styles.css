@@ -61,7 +61,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   overflow: hidden; }
 
 #bg {
-  background: #003863; }
+  background: #003863;
+  background-image: url("../img/static.jpg"); }
 
 #wrapper {
   position: relative;

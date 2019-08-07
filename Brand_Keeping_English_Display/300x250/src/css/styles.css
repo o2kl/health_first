@@ -106,7 +106,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   position: relative; }
 
 #raster-leaf {
-  background: url('../img/sprites-se6c49949b7.png') 0 -1000px;
+  background: url('../img/sprites-s2b8e9f2196.png') 0 -1000px;
   left: 30px;
   top: 25px;
   width: 66px;
@@ -114,16 +114,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /*   animation stuff end */
 #logo {
-  background: url('../img/sprites-se6c49949b7.png') 0 -750px; }
+  background: url('../img/sprites-s2b8e9f2196.png') 0 -750px; }
 
 #copy-1 {
-  background: url('../img/sprites-se6c49949b7.png') 0 0; }
+  background: url('../img/sprites-s2b8e9f2196.png') 0 0; }
 
 #copy-2 {
-  background: url('../img/sprites-se6c49949b7.png') 0 -250px; }
+  background: url('../img/sprites-s2b8e9f2196.png') 0 -250px; }
 
 #lockup {
-  background: url('../img/sprites-se6c49949b7.png') 0 -500px; }
-
-#drawer-bg {
-  top: 88px; }
+  background: url('../img/sprites-s2b8e9f2196.png') 0 -500px; }

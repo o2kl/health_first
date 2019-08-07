@@ -42,12 +42,13 @@ var nameSpace = HF || {};
     ids.forEach(function(element) {
       //   TweenMax.to(element, 0, { autoAlpha: 0, y: height - 100 });
     });
-    TweenMax.set(['#copy-1'], { x: 780, y:0,  autoAlpha: 0 });
+    TweenMax.set(['#copy-1', '#xout'], { x: 780, y:0,  autoAlpha: 0 });
     TweenMax.set(['#copy-2'], { x: 728, y: 0, autoAlpha: 0 });
     TweenMax.set(['#drawer', '#lockup'], { x: 250, autoAlpha: 1 });
     TweenMax.set(['#logo'], { y: 0, autoAlpha: 1 });
     TweenMax.set(['#leaf'], { x: 478,  y: 0, scale: 0.6, autoAlpha: 1 });
     TweenMax.set('#drawer-bg', { y: 0, autoAlpha: 1 });
+    TweenMax.set('#xout-relative', { x: 191, y: 45, width: 0, autoAlpha: 0 });
 
     wrapper = nameSpace.$('#wrapper');
     clickThrough = document.getElementById('click_through');
@@ -120,7 +121,7 @@ var nameSpace = HF || {};
     // It will even take care of browser prefixes
     // TweenMax.set(logo, {x:100, y:50, opacity:0});
 
-    var leafScale, leafX, leafY, endScale, endX, endY, endDrawer, timelineDelay;
+    var leafScale, leafX, leafY, endScale, endX, endY, endDrawer, endLeaf, timelineDelay;
     leafScale = .65;
     leafX = 196;
     leafY = -31;
@@ -158,7 +159,7 @@ var nameSpace = HF || {};
         '+=0.75'
       )
       .to(
-        '#copy-1',
+        ['#copy-1', '#xout'],
         .9,
         {
           x: 90,
@@ -169,6 +170,16 @@ var nameSpace = HF || {};
           ease: Power1.easeOut
         },
         '-=0.75'
+      )
+      .set(
+        '#xout-relative',
+        {autoAlpha: 1,}
+      )
+      .to(
+        '#xout-relative',
+        0.5,
+        {width: 100},
+        "+=1"
       )
       .to(
         '#copy-2',
@@ -210,7 +221,7 @@ var nameSpace = HF || {};
         '-=1.25'
       )
       .to(
-        ['#copy-1', '#copy-2'],
+        ['#copy-1', '#copy-2', '#xout'],
         1.25,
           {
             x: 0,

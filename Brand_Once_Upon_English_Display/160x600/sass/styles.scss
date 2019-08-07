@@ -34,7 +34,7 @@ $sprites: sprite-map('sprites/*.png');
   @extend .abs-pos;
   background: #003863;
   //background-image: url('../img/frame1.png');
-  //background-image: url('../img/static.jpg');
+  background-image: url('../img/static.jpg');
 }
 
 #wrapper {
