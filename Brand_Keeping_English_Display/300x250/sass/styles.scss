@@ -32,7 +32,9 @@ $sprites: sprite-map('sprites/*.png');
 
 #bg {
   @extend .abs-pos;
-  background: #569035;
+  background: #529535;
+  //background-image: url('../img/frame1.png');
+  //background-image: url('../img/static.jpg');
 }
 
 #wrapper {
@@ -53,10 +55,57 @@ $sprites: sprite-map('sprites/*.png');
   border: 1px solid #000000;
 }
 
-#leaf {
+/* animations stuff start */
+#leaf-svg-div{
   @extend .abs-pos;
-  background: sprite($sprites, leaf);
+  width: 125px;
+  height: 170px;
+
 }
+#leaf-masker{
+  @extend .abs-pos;
+  width: 125px;
+  height: 143px;
+
+}
+#leaf-mover{
+  @extend .abs-pos;
+  width: 125px;
+  height: 170px;
+
+}
+#shadow-svg-div{
+  @extend .abs-pos;
+  width: 125px;
+  height: 170px;
+
+}
+#anim-wrapper{
+  @extend .abs-pos;
+  width: $width;
+  height: $height;
+}
+#anim-wrapper-rel{
+  position: relative;
+  
+  visibility: hidden;
+  width: 70px;
+  height: 126px;
+}
+#anim-wrapper-scale{
+  position: relative;
+
+}
+#raster-leaf {
+  @extend .abs-pos;
+  background: sprite($sprites, raster-leaf);
+  left: 30px;
+  top: 25px;
+  width: 66px;
+  height: 98px;
+}
+
+/*   animation stuff end */
 
 #logo {
   @extend .abs-pos;
@@ -83,5 +132,5 @@ $sprites: sprite-map('sprites/*.png');
 
 #drawer-bg {
   @extend .abs-pos;
-  top: 95px;
+  top: 88px;
 }

@@ -4,7 +4,7 @@ var nameSpace = HF || {};
   'use strict';
 
   var timeline;
-  var wrapper, clickThrough, logo, copy, cta, width, height, ids;
+  var wrapper, clickThrough, logo, copy, cta, width, height, ids, leaf;
 
   nameSpace.init = function() {
     // // Initialize any variables here
@@ -17,6 +17,7 @@ var nameSpace = HF || {};
     /* added by me */
     // Initialize any variables here
     ids = [];
+    leaf = leafPath;
 
     //SET IDs IN DOM TO GLOBAL VARIABLES
     var allElements = document.getElementsByTagName('*');
@@ -43,9 +44,9 @@ var nameSpace = HF || {};
     });
     TweenMax.set(['#copy-1'], { x: 780, y:0,  autoAlpha: 0 });
     TweenMax.set(['#copy-2'], { x: 320, y: 0, autoAlpha: 0 });
-    TweenMax.set(['#drawer', '#lockup'], { x: 90, autoAlpha: 1 });
+    TweenMax.set(['#drawer', '#lockup'], { x: 250, autoAlpha: 1 });
     TweenMax.set(['#logo'], { y: 0, autoAlpha: 1 });
-    TweenMax.set(['#leaf'], { x: 478,  y: 0, scale: 0.5, autoAlpha: 1 });
+    TweenMax.set(['#leaf'], { x: 478,  y: 0, scale: 0.6, autoAlpha: 1 });
     TweenMax.set('#drawer-bg', { y: 0, autoAlpha: 1 });
 
     wrapper = nameSpace.$('#wrapper');
@@ -114,74 +115,76 @@ var nameSpace = HF || {};
     document.body.appendChild(anchor);
   };
 
-  nameSpace.initAnimation = function() {
+      nameSpace.initAnimation = function() {
     // TweenMax can be used to set css
     // It will even take care of browser prefixes
     // TweenMax.set(logo, {x:100, y:50, opacity:0});
 
+    var leafScale, leafX, leafY, endScale, endX, endY, endDrawer, timelineDelay;
+    leafScale = .35;
+    leafX = 35;
+    leafY = -45;
+    endScale = 0.2;
+    endX = -96;
+    endY = -42;
+    endDrawer = 0;
+    timelineDelay= 3;
+
+
     timeline = new TimelineMax({
-      delay: 1.5,
+      delay: timelineDelay,
       onComplete: nameSpace.onAnimationComplete
     });
 
     timeline.pause();
 
+    ///  leaf animation position vars 
+
+
     timeline
       .to(
-        ['#logo'],
-        0.3,
+        '#anim-wrapper-scale',
+        1,
         {
-          autoAlpha: 0,
-          transformPerspective: 400,
-          force3D: true,
-          rotationZ: 0.01,
-          ease: Power1.easeInOut
-        },
-        '+= 0'
-      )
-      .to(
-        '#leaf',
-        1.3,
-        {
-          x: -120,
+          x: endX,
+          y: endY,
           autoAlpha: 1,
-          scale: 0.5,
+          scale: endScale,
           transformPerspective: 400,
           force3D: true,
           rotationZ: 0.01,
           ease: Power1.easeOut
         },
-        '-= 0.3'
+        '+=0.75'
       )
       .to(
         '#copy-1',
-        1.3,
+        .9,
         {
-          x: 25,
+          x: 50,
           autoAlpha: 1,
           transformPerspective: 400,
           force3D: true,
           rotationZ: 0.01,
           ease: Power1.easeOut
         },
-        '-= 1.3'
+        '-=0.75'
       )
       .to(
-        ['#copy-2'],
+        '#copy-2',
         1.2,
         {
-          y: 0,
-          x: 25,
+          x: 50,
           autoAlpha: 1,
           transformPerspective: 400,
           force3D: true,
           rotationZ: 0.01,
           ease: Power1.easeOut
         },
-        '+=1.75'
+        '+=1'
       )
       .to(
-        ['#lockup', '#drawer', '#copy-1', '#copy-2'],
+        '#lockup',
         1.25,
         {
           x: 0,
@@ -191,21 +194,73 @@ var nameSpace = HF || {};
           rotationZ: 0.01,
           ease: Power1.easeInOut
         },
-        '+=2'
+        '+= 1'
       )
       .to(
-        '#leaf',
+        '#drawer',
         1.25,
         {
-          x: -147,
+          x: endDrawer,
+          autoAlpha: 1,
           transformPerspective: 400,
           force3D: true,
           rotationZ: 0.01,
           ease: Power1.easeInOut
         },
         '-=1.25'
-      );
+      )
+      .to(
+        ['#copy-1', '#copy-2'],
+        1.25,
+          {
+            x: 0,
+            force3D: true,
+            rotationZ: 0.01,
+            ease: Power1.easeInOut
+          },
+          '-=1.25'
+        )
+        .to(
+          '#anim-wrapper-scale',
+          1.25,
+          {
+            x: -127,
+            force3D: true,
+            rotationZ: 0.01,
+            ease: Power1.easeInOut
+          },
+          '-=1.25'
+        );;
 
+      
+
+      TweenMax.set("#anim-wrapper-rel",  {autoAlpha: 1});
+      TweenMax.set("#anim-wrapper", {autoAlpha: 1});
+      TweenMax.set("#shadow-svg-div", {autoAlpha: 0.4});
+      TweenMax.set(['#shadow-svg-div', '#leaf-mover'], {transformOrigin: "75px 143px"});
+      //TweenMax.set('#raster-leaf', {transformOrigin: "75px 143px"});
+      TweenMax.set("#anim-wrapper-scale", {scale: leafScale, x: leafX, y: leafY});
+      TweenMax.set("#raster-leaf", {autoAlpha: 0});
+
+      var d = 1.5;
+      TweenMax.to(['#logo'], 0.3, { autoAlpha: 0, transformPerspective: 400, force3D: true,rotationZ: 0.01, ease: Power1.easeInOut, delay: d});
+      TweenMax.from("#leaf-mover", 3.2, {  scaleY: 0.0001, x: 20, y: 200, rotation: 80, ease:Expo.easeOut, delay: d});
+      TweenMax.from("#shadow-svg-div", 2.2, { scaleY: 0.1, scaleX: 0.01, x: 15, opacity: 0.01, ease:Linear.easeOut, delay: d});
+      TweenMax.to('#leaf-right', 1.5, {morphSVG:{shape: leaf.openRight}, ease:Strong.easeInOut, delay: .5 + d});
+      TweenMax.to('#leaf-left', 1.5, {morphSVG:{shape: leaf.openLeft}, ease:Strong.easeInOut, delay: .5 + d});
+      
+      TweenMax.to(["#raster-leaf"], 2, {
+                  autoAlpha: 1, 
+                  delay: 1.9 + d
+                });
+      //TweenMax.set(['#anim-wrapper', '#anim-wrapper-rel', '#anim-wrapper-scale'], {autoAlpha:0, x: -800, delay: 3.7})
+
+      //TweenMax.delayedCall(4.7, timeline.play);
+      
+      
+
+      console.log("inAnimInit");
+      
     // timeline.add([
     //   TweenMax.to(logo, 0.6, { opacity: 1 }),
     //   TweenMax.to(copy, 0.8, { css: { opacity: 1 }, delay: 0.4 })

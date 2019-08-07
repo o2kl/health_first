@@ -1,0 +1,13 @@
+{
+  "generator-banner": {
+    "nameSpace": "HF",
+    "publisher": "doubleclick",
+    "bannerName": "Brand_Once_Upon_English_Display_728x90",
+    "width": "300",
+    "height": "250",
+    "size": "150",
+    "includeFallbackIE": true,
+    "fallbackIEVersion": 10,
+    "doubleclickPlatform": "campaignManager"
+  }
+}
