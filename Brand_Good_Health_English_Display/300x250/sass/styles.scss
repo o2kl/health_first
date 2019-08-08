@@ -132,5 +132,7 @@ $sprites: sprite-map('sprites/*.png');
 
 #drawer-bg {
   @extend .abs-pos;
-  top: 88px;
+  width: $width;
+  height: $height;
+  // top: 88px;
 }

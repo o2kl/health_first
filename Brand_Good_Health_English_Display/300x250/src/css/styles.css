@@ -126,4 +126,5 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background: url('../img/sprites-s3f350b4085.png') 0 -500px; }
 
 #drawer-bg {
-  top: 88px; }
+  width: 300px;
+  height: 250px; }
