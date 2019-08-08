@@ -185,7 +185,7 @@ gulp.task( 'imageCompress', [ 'copy', 'sass' ], function (done) {
 
 gulp.task( 'compress', [ 'clean', 'copy','sass', 'inline', 'replace', 'htmlmin', 'imageCompress' ], function() {
 	return gulp.src(  dist + '/*' )
-			   .pipe( zip( 'Brand_Sprouting_English_Display 160x600.zip' ) )
+			   .pipe( zip( 'Brand_Sprouting_Brooklyn_English_Display 160x600.zip' ) )
 			   .pipe( gulp.dest( './' ) );
 });
 

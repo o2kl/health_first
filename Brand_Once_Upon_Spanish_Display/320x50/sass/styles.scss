@@ -1,0 +1,136 @@
+@import 'compass/reset';
+@import 'compass/css3';
+@import 'compass/css3/transform';
+@import 'compass/utilities/sprites';
+
+// set up variables
+$width: 320px;
+$height: 50px;
+
+// Uncomment to include sprites in your banner
+$sprites: sprite-map('sprites/*.png');
+
+// to use sprites, place the image in the sprites folder and set the background for the desired element as follows:
+// .element { background: sprite($sprites, image-name); }
+
+// set all elements to be box-sizing: border box to include any border, padding and content, but not margin.
+*,
+:before,
+:after {
+  @include box-sizing(border-box);
+}
+
+// 100% width and height elements that can be positioned easily absolutely
+.abs-pos {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: $width;
+  height: $height;
+  overflow: hidden;
+}
+
+#bg {
+  @extend .abs-pos;
+  background: #003863;
+  //background-image: url('../img/frame1.png');
+  //background-image: url('../img/static.jpg');
+}
+
+#wrapper {
+  @extend .abs-pos;
+  position: relative;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+}
+
+#click_through {
+  @extend .abs-pos;
+  z-index: 999;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #000000;
+}
+
+/* animations stuff start */
+#leaf-svg-div{
+  @extend .abs-pos;
+  width: 125px;
+  height: 170px;
+
+}
+#leaf-masker{
+  @extend .abs-pos;
+  width: 125px;
+  height: 143px;
+
+}
+#leaf-mover{
+  @extend .abs-pos;
+  width: 125px;
+  height: 170px;
+
+}
+#shadow-svg-div{
+  @extend .abs-pos;
+  width: 125px;
+  height: 170px;
+
+}
+#anim-wrapper{
+  @extend .abs-pos;
+  width: $width;
+  height: $height;
+}
+#anim-wrapper-rel{
+  position: relative;
+  
+  visibility: hidden;
+  width: 70px;
+  height: 126px;
+}
+#anim-wrapper-scale{
+  position: relative;
+
+}
+#raster-leaf {
+  @extend .abs-pos;
+  background: sprite($sprites, raster-leaf);
+  left: 30px;
+  top: 25px;
+  width: 66px;
+  height: 98px;
+}
+
+/*   animation stuff end */
+
+#logo {
+  @extend .abs-pos;
+  background: sprite($sprites, logo);
+}
+
+#copy-1 {
+  @extend .abs-pos;
+  background: sprite($sprites, copy-1);
+}
+#copy-2 {
+  @extend .abs-pos;
+  background: sprite($sprites, copy-2);
+}
+
+#lockup {
+  @extend .abs-pos;
+  background: sprite($sprites, lockup);
+}
+
+#drawer {
+  @extend .abs-pos;
+}
+
+#drawer-bg {
+  @extend .abs-pos;
+  // left: 300px;
+}
