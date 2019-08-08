@@ -52,7 +52,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.abs-pos, #bg, #wrapper, #click_through, #leaf-svg-div, #leaf-masker, #leaf-mover, #shadow-svg-div, #anim-wrapper, #raster-leaf, #logo, #copy-1, #copy-2, #lockup, #drawer, #drawer-bg {
+.abs-pos, #bg, #wrapper, #click_through, #leaf-svg-div, #leaf-masker, #leaf-mover, #shadow-svg-div, #anim-wrapper, #raster-leaf, #logo, #copy-1, #lockup, #drawer, #drawer-bg {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -106,7 +106,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   position: relative; }
 
 #raster-leaf {
-  background: url('../img/sprites-s576833db2f.png') 0 -200px;
+  background: url('../img/sprites-s3b6a61b8da.png') 0 -150px;
   left: 30px;
   top: 25px;
   width: 66px;
@@ -114,13 +114,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /*   animation stuff end */
 #logo {
-  background: url('../img/sprites-s576833db2f.png') 0 -150px; }
+  background: url('../img/sprites-s3b6a61b8da.png') 0 -100px; }
 
 #copy-1 {
-  background: url('../img/sprites-s576833db2f.png') 0 0; }
-
-#copy-2 {
-  background: url('../img/sprites-s576833db2f.png') 0 -50px; }
+  background: url('../img/sprites-s3b6a61b8da.png') 0 0; }
 
 #lockup {
-  background: url('../img/sprites-s576833db2f.png') 0 -100px; }
+  background: url('../img/sprites-s3b6a61b8da.png') 0 -50px; }

@@ -125,10 +125,15 @@ var nameSpace = HF || {};
     endScale = 0.38;
     endX = 6;
     endY = -11;
-    endDrawer = 0;
+    endDrawer = 58;
     timelineDelay= 1.5;
     leaf = leafPath;
 
+       // below makes drawer even with lockup to look like one tween
+    if(endDrawer != 0){
+      var dY = document.getElementById('lockup')._gsTransform.y + endDrawer;
+      TweenMax.set('#drawer', {y: dY});
+    }
 
     timeline = new TimelineMax({
       delay: timelineDelay,
@@ -158,7 +163,7 @@ var nameSpace = HF || {};
       )
       .to(
         '#copy-1',
-        .9,
+        0.9,
         {
           y: 0,
           autoAlpha: 1,
@@ -233,8 +238,8 @@ var nameSpace = HF || {};
 
       TweenMax.from("#leaf-mover", 3.2, {  scaleY: 0.0001, x: 20, y: 200, rotation: 80, ease:Expo.easeOut, delay: 0});
       TweenMax.from("#shadow-svg-div", 2.2, { scaleY: 0.1, scaleX: 0.01, x: 15, opacity: 0.01, ease:Linear.easeOut, delay: 0});
-      TweenMax.to('#leaf-right', 1.5, {morphSVG:{shape: leaf.openRight}, ease:Strong.easeInOut, delay: .5});
-      TweenMax.to('#leaf-left', 1.5, {morphSVG:{shape: leaf.openLeft}, ease:Strong.easeInOut, delay: .5});
+      TweenMax.to('#leaf-right', 1.5, {morphSVG:{shape: leaf.openRight}, ease:Strong.easeInOut, delay: 0.5});
+      TweenMax.to('#leaf-left', 1.5, {morphSVG:{shape: leaf.openLeft}, ease:Strong.easeInOut, delay: 0.5});
       
       TweenMax.to(["#raster-leaf"], 2, {
                   autoAlpha: 1, 

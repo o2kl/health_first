@@ -224,7 +224,7 @@ var nameSpace = HF || {};
           '#anim-wrapper-scale',
           1.25,
           {
-            x: -127,
+            x: -120,
             force3D: true,
             rotationZ: 0.01,
             ease: Power1.easeInOut
