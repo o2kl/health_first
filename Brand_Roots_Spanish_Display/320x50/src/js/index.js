@@ -43,7 +43,7 @@ var nameSpace = HF || {};
       //   TweenMax.to(element, 0, { autoAlpha: 0, y: height - 100 });
     });
     TweenMax.set(['#copy-1'], { x: 780, y:0,  autoAlpha: 0 });
-    TweenMax.set(['#copy-2'], { x: 320, y: 0, autoAlpha: 0 });
+    // TweenMax.set(['#copy-2'], { x: 320, y: 0, autoAlpha: 0 });
     TweenMax.set(['#drawer', '#lockup'], { x: 250, autoAlpha: 1 });
     TweenMax.set(['#logo'], { y: 0, autoAlpha: 1 });
     TweenMax.set(['#leaf'], { x: 478,  y: 0, scale: 0.6, autoAlpha: 1 });
@@ -121,7 +121,7 @@ var nameSpace = HF || {};
     // TweenMax.set(logo, {x:100, y:50, opacity:0});
 
     var leafScale, leafX, leafY, endScale, endX, endY, endDrawer, endLeaf, timelineDelay;
-    leafScale = .35;
+    leafScale = 0.35;
     leafX = 35;
     leafY = -45;
     endScale = 0.2;
@@ -159,7 +159,7 @@ var nameSpace = HF || {};
       )
       .to(
         '#copy-1',
-        .9,
+        0.9,
         {
           x: 50,
           autoAlpha: 1,
@@ -169,19 +169,6 @@ var nameSpace = HF || {};
           ease: Power1.easeOut
         },
         '-=0.75'
-      )
-      .to(
-        '#copy-2',
-        1.2,
-        {
-          x: 50,
-          autoAlpha: 1,
-          transformPerspective: 400,
-          force3D: true,
-          rotationZ: 0.01,
-          ease: Power1.easeOut
-        },
-        '+=1'
       )
       .to(
         '#lockup',
@@ -210,7 +197,7 @@ var nameSpace = HF || {};
         '-=1.25'
       )
       .to(
-        ['#copy-1', '#copy-2'],
+        ['#copy-1'],
         1.25,
           {
             x: 0,
@@ -230,7 +217,7 @@ var nameSpace = HF || {};
             ease: Power1.easeInOut
           },
           '-=1.25'
-        );;
+        );
 
       
 
@@ -246,8 +233,8 @@ var nameSpace = HF || {};
       TweenMax.to(['#logo'], 0.3, { autoAlpha: 0, transformPerspective: 400, force3D: true,rotationZ: 0.01, ease: Power1.easeInOut, delay: d});
       TweenMax.from("#leaf-mover", 3.2, {  scaleY: 0.0001, x: 20, y: 200, rotation: 80, ease:Expo.easeOut, delay: d});
       TweenMax.from("#shadow-svg-div", 2.2, { scaleY: 0.1, scaleX: 0.01, x: 15, opacity: 0.01, ease:Linear.easeOut, delay: d});
-      TweenMax.to('#leaf-right', 1.5, {morphSVG:{shape: leaf.openRight}, ease:Strong.easeInOut, delay: .5 + d});
-      TweenMax.to('#leaf-left', 1.5, {morphSVG:{shape: leaf.openLeft}, ease:Strong.easeInOut, delay: .5 + d});
+      TweenMax.to('#leaf-right', 1.5, {morphSVG:{shape: leaf.openRight}, ease:Strong.easeInOut, delay: 0.5 + d});
+      TweenMax.to('#leaf-left', 1.5, {morphSVG:{shape: leaf.openLeft}, ease:Strong.easeInOut, delay: 0.5 + d});
       
       TweenMax.to(["#raster-leaf"], 2, {
                   autoAlpha: 1, 

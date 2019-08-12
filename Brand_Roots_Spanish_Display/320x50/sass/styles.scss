@@ -116,10 +116,6 @@ $sprites: sprite-map('sprites/*.png');
   @extend .abs-pos;
   background: sprite($sprites, copy-1);
 }
-#copy-2 {
-  @extend .abs-pos;
-  background: sprite($sprites, copy-2);
-}
 
 #lockup {
   @extend .abs-pos;
