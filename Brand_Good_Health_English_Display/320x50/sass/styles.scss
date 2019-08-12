@@ -32,7 +32,7 @@ $sprites: sprite-map('sprites/*.png');
 
 #bg {
   @extend .abs-pos;
-  background: #5E2584;
+  background: #529535;
   //background-image: url('../img/frame1.png');
   //background-image: url('../img/static.jpg');
 }
@@ -115,14 +115,6 @@ $sprites: sprite-map('sprites/*.png');
 #copy-1 {
   @extend .abs-pos;
   background: sprite($sprites, copy-1);
-}
-#copy-2 {
-  @extend .abs-pos;
-  background: sprite($sprites, copy-2);
-}
-#copy-3 {
-  @extend .abs-pos;
-  background: sprite($sprites, copy-3);
 }
 
 #lockup {
