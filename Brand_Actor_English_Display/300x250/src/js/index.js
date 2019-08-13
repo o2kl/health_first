@@ -254,8 +254,7 @@ var nameSpace = HF || {};
       //TweenMax.set(['#anim-wrapper', '#anim-wrapper-rel', '#anim-wrapper-scale'], {autoAlpha:0, x: -800, delay: 3.7})
 
       //TweenMax.delayedCall(4.7, timeline.play);
-      
-      
+    
 
       console.log("inAnimInit");
       

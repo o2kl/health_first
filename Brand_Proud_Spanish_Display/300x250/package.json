@@ -32,7 +32,7 @@
     "gulp-zip": "^3.2.0",
     "image-size": "^0.5.0",
     "jshint": "^2.9.2",
-    "yargs": "^4.8.1",
-    "resize-banner": "git+https://github.com/benjanes/resize-banner.git#master"
+    "resize-banner": "git+https://github.com/benjanes/resize-banner.git#master",
+    "yargs": "^4.8.1"
   }
 }
